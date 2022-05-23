@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import listUsersServices from "../services/listUsersServices";
 
-const listUsersController = (request: Request, response: Response) => {
+const listUsersController = async (request: Request, response: Response) => {
 
   try{
     const user = listUsersServices();

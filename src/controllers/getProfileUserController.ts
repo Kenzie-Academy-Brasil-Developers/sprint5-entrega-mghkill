@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import getProfileUserService from "../services/getProfileUserService";
 
-const getProfileUserController = (request: Request, response: Response) => {
+const getProfileUserController = async (request: Request, response: Response) => {
   try{
     const {id} = request.params 
 

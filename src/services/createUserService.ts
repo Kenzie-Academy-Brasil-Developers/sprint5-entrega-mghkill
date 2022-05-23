@@ -1,22 +1,17 @@
 import bcrypt from "bcrypt";
-import { v4 as uuidv4 } from "uuid";
-import users from "../database";
+import { User } from "../entities/user.entity";
 
 const createUserService = async (name: string, email: string, age: number, password: string) => {
+
   const hashPassword = await bcrypt.hash(password, 10)
   
-  const user = {
-    name,
-    email,
-    password: hashPassword,
-    age,
-    createdOn: new Date(),
-    updatedOn: new Date(),
-    id: uuidv4(),
-   }
+  const user = new User();
 
-   users.push(user)
-   
+  user.name = name;
+  user.email = email;
+  user.age = age; 
+  user.password = hashPassword
+
   return user
 
 };

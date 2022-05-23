@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import deleteUsersService from "../services/deleteUserServices";
 
-const deleteUsersController = (request: Request, response: Response) => {
+const deleteUsersController = async (request: Request, response: Response) => {
   try{
     const { id } = request.params;
 

@@ -1,7 +1,11 @@
-import users from "../database";
+import { AppDataSource } from "../data-source";
+import { User } from "../entities/user.entity";
 
-const getProfileUserService = (id: string) => {
+const getProfileUserService = async (id: string) => {
+  const userRepository = AppDataSource.getRepository(User);
 
+  const users = await userRepository.find();
+  
   const user = users.find((u) => u.id === id);
   
   return user;
