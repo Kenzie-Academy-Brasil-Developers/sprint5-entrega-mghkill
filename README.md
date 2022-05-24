@@ -74,7 +74,7 @@
 ]
 ```
 
-## GET /users/<id> - Rota responsável por buscar usuário por id.
+## GET /users/< id > - Rota responsável por buscar usuário por id.
 
 ### Corpo da requisição:
 
@@ -96,7 +96,7 @@
 ```
 ---
 
-## PATCH /users/<id> - Rota responsável pela ATUALIZAÇÃO das informações do usuário buscando por id.
+## PATCH /users/< id > - Rota responsável pela ATUALIZAÇÃO das informações do usuário buscando por id.
 
 ### Corpo da requisição:
 
@@ -124,7 +124,7 @@
 
 ---
 
-## DELETE /api/leads/delete/<userId> - Rota responsável por DELETAR as informações do usuário.
+## DELETE /api/leads/delete/< userId > - Rota responsável por DELETAR as informações do usuário.
 
 ### Corpo da resposta:
   
