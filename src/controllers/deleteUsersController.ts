@@ -5,7 +5,7 @@ const deleteUsersController = async (request: Request, response: Response) => {
   try{
     const { id } = request.params;
 
-    const user = deleteUsersService(id);
+    const user = await deleteUsersService(id);
 
     return response.status(200).json(user);
 

@@ -5,7 +5,7 @@ const getProfileUserController = async (request: Request, response: Response) =>
   try{
     const {id} = request.params 
 
-    const user = getProfileUserService(id);
+    const user = await getProfileUserService(id);
   
     return response.status(200).json(user);
 

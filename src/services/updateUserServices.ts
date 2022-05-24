@@ -8,10 +8,8 @@ const updateUsersService = async (id: string, data: IUsers) => {
 
   const users = await userRepository.find();
 
-  const date = new Date();
-  
   data.id = id;
-  data.updatedOn = date;
+  data.updatedOn = new Date();
   
   if (data.password) {
     const { password } = data
@@ -24,10 +22,14 @@ const updateUsersService = async (id: string, data: IUsers) => {
   if (userIndex === -1) {
     return { Message: "User not found" };
   }
+  const firstUser = await userRepository.findOneBy({
+    id: id,
+  })
 
-  users[userIndex] = { ...users[userIndex], ...data };
-
-  return users[userIndex];
+  firstUser[userIndex] = { ...users[userIndex], ...data };
+  
+  await userRepository.save(data);
+  return firstUser[userIndex];
 };
 
 export default updateUsersService;
