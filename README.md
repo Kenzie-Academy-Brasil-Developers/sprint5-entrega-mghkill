@@ -9,7 +9,7 @@
 	"name": "Paulo Melo",
 	"email": "teste@mail.com",
 	"age": 10,
-  "password": "123456"
+  	"password": "123456"
 }
 ```
 
